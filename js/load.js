@@ -3,13 +3,14 @@ var loadState = {
     preload: function () {
 
         /*
-        Place to put all assets to be used while loading.
+        Place to load all assets and show loading screen on loading.
         */
 
         var loadingLabel = game.add.text(80, 150, 'loading...', {font: '30px Courier', fill: '#fff'});
 
         //Load your images, spritesheets, bitmaps...
         //Example: game.load.image('boiler-logo', 'assets/img/boilerplate-logo.png');
+        game.load.image('background_1200_900', 'assets/img/background_1200_900.png');
 
 
         //Load your sounds, efx, music...
