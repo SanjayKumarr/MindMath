@@ -1,9 +1,11 @@
 var menuState = {
 
-    create: function () {
+  create: function () {
 
-        //game.add.image(95, 150, 'boiler-logo');
+    //game.add.image(95, 150, 'boiler-logo');
 
-    }
+    game.state.start('play');
+  
+  }
 
 };
