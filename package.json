@@ -1,0 +1,23 @@
+{
+  "name": "mindmath",
+  "version": "1.0.0",
+  "description": "Teach kids to do math as fast as a calculator ;)",
+  "main": "js/stateManager.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@orange-games/phaser-input": "^2.0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanjayKumarr/MindMath.git"
+  },
+  "author": "Sanjay Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SanjayKumarr/MindMath/issues"
+  },
+  "homepage": "https://github.com/SanjayKumarr/MindMath#readme"
+}

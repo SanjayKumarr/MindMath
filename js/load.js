@@ -10,15 +10,20 @@ var loadState = {
 
         //Load your images, spritesheets, bitmaps...
         //Example: game.load.image('boiler-logo', 'assets/img/boilerplate-logo.png');
-        game.load.image('background_1200_900', 'assets/img/background_1200_900.png');
-
+        game.load.image('background_1200_900', 'assets/img/background_1200_900.gif');
+        game.load.image('homework_green_board', 'assets/img/homework_green_board.gif');
+        game.load.image('text_button', 'assets/img/text_button.gif');
+        game.load.image('penguin_notepad', 'assets/img/penguin_with_notepad_pencil.png');
+        game.load.image('timer_board', 'assets/img/timer_board.gif');
+        game.load.image('homework_template', 'assets/img/homework_template.gif');
+        game.load.image('penguin_helper', 'assets/img/penguin_with_books.png');
 
         //Load your sounds, efx, music...
         //Example: game.load.audio('rockas', 'assets/snd/rockas.wav');
 
         //Load your data, JSON, Querys...
         //Example: game.load.json('version', 'http://phaser.io/version.json');
-
+        game.add.plugin(PhaserInput.Plugin);
     },
 
     create: function () {
