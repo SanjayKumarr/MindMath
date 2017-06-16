@@ -75,7 +75,7 @@ function setQuestion() {
   question_num = Math.round(Math.random() * 9) * 10 + 5;
   var first_digit = Math.floor(question_num/10);
 
-  question_txt.setText('( ' + question_num + ' )');
+  question_txt.setText('( ' + question_num + ' * ' + question_num + ' )');
   answer_helper_left.setText(first_digit + ' * Next number to ' + first_digit + '  (' + (++first_digit) + ')');
   is_question_set = true; 
 
