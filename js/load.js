@@ -15,7 +15,7 @@ var loadState = {
         game.load.image('text_button', 'assets/img/text_button.gif');
         game.load.image('penguin_notepad', 'assets/img/penguin_with_notepad_pencil.png');
         game.load.image('timer_board', 'assets/img/timer_board.gif');
-        game.load.image('homework_template', 'assets/img/homework_template.gif');
+        game.load.image('homework_template', 'assets/img/homework_template_3.gif');
         game.load.image('penguin_helper', 'assets/img/penguin_with_books.png');
 
         //Load your sounds, efx, music...

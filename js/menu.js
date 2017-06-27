@@ -1,3 +1,4 @@
+var chosen_question_number;
 var menuState = {
 
   create: function () {
@@ -13,17 +14,21 @@ var menuState = {
 };
 
 function getQuestion() {
-  var question_prefix = 'Today, My teacher taught me the trick to find \n';
-  var homework_questions = {
-    easy: [
-      'the square of any number ending with 5!',
-      ''
-    ],
-    medium: [],
-    hard: []
-  }
-
-  return question_prefix + homework_questions.easy[0];
+  var question_prefix = 'Today, My teacher taught me the trick to ';
+  var homework_questions = [
+    "find \n the sqaure of any number ending with 5!",
+    "find \n the square of numbers just below 100!",
+    "\n multiply a number with 9",
+    "find \n the sqaure of number just above 100!",
+    "find the square of \n any three digit number with a zero in between!",
+    "\n multiply any number with 5!",
+    "multiply \n a two digit number with 11",
+    "multiply two digits \n when the sum of the one's digit is 10",
+  ]; 
+  chosen_question_number = Math.floor((Math.random() * homework_questions.length) /2) * 2;
+  
+  
+  return question_prefix + homework_questions[chosen_question_number];
 };
 
 function showHomeWorkScreen() {
