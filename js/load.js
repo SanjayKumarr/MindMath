@@ -17,6 +17,9 @@ var loadState = {
         game.load.image('timer_board', 'assets/img/timer_board.gif');
         game.load.image('homework_template', 'assets/img/homework_template_3.gif');
         game.load.image('penguin_helper', 'assets/img/penguin_with_books.png');
+        game.load.image('back_button', 'assets/img/back_button.png');
+        game.load.image('board', 'assets/img/board.jpg');
+        //game.load.audio('chalk_track', ['assets/track/pencilsketching.mp3']);
 
         //Load your sounds, efx, music...
         //Example: game.load.audio('rockas', 'assets/snd/rockas.wav');
@@ -30,6 +33,7 @@ var loadState = {
 
         game.stage.setBackgroundColor('#000');
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
-        game.state.start('menu');
+        game.state.start('curiosityClick');
+        //game.state.start('questionDisplay');
     }
 };
