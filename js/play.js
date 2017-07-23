@@ -7,6 +7,13 @@ var playState = {
   create: function () {
   
   game.add.image(0, 0, 'background_1200_900');
+  var helper_texts = game.add.group();
+
+  var back_button = game.add.button(game.world.centerX - 550 ,100, 'back_button', goBackFunction);
+  back_button.anchor.setTo(0.5)
+  back_button.scale.setTo(0.40, 0.40);
+  game.add.text(game.world.centerX - 550 ,130, "Back", {fill: '#ccc', font: "bold 15px"}, helper_texts);
+
   var boards = game.add.group();
   boards.create(game.world.centerX - 400 ,100 , 'timer_board');
   boards.create(game.world.centerX + 400 ,100 , 'timer_board');
@@ -22,7 +29,6 @@ var playState = {
   lollipops_count_txt = game.add.text(game.world.centerX + 400 ,100, '0', {fill: '#fff', font: "30px"});
   lollipops_count_txt.anchor.setTo(0.5);
 
-  var helper_texts = game.add.group();
   game.add.text(game.world.centerX - 400 ,180, "Time", {fill: 'orange', font: "bold 20px"}, helper_texts);
   game.add.text(game.world.centerX + 400 ,180, "Lollipops", {fill: 'orange', font: "bold 20px"}, helper_texts);
 
@@ -252,6 +258,11 @@ function verifyAnswer() {
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function goBackFunction() {
+  game.state.start('questionDisplay');
+  moving_back = true;
 }
 
 
