@@ -43,7 +43,7 @@ var learnTrickState = {
     navigate_button_txt = game.add.text(game.world.centerX ,game.world.centerY + 250, 'Next Step', {fill: '#fff', font: "20px"});
     navigate_button_txt.anchor.setTo(0.5);
 
-    var curious_kid_button = game.add.button(game.world.centerX ,game.world.centerY + 350, 'text_button', showNextStep);
+    var curious_kid_button = game.add.button(game.world.centerX ,game.world.centerY + 350, 'text_button', moveToCuriousClickState);
     curious_kid_button.anchor.setTo(0.5);
     var curious_kid_button = game.add.text(game.world.centerX ,game.world.centerY + 350, 'Curiousity clicks!', {fill: '#fff', font: "20px"});
     curious_kid_button.anchor.setTo(0.5);
@@ -231,7 +231,7 @@ function showNextStep() {
 
 function updateLine() {
 
-    if (tutorial_line.length < tutorial_steps[current_step].length || example_line.length < example_steps[current_step].length)
+    if (tutorial_line.length< tutorial_steps[current_step].length || example_line.length < example_steps[current_step].length)
     {
         tutorial_line = tutorial_steps[current_step].substr(0, tutorial_line.length + 1);
         example_line = example_steps[current_step].substr(0, example_line.length + 1);
@@ -259,5 +259,10 @@ function nextLine() {
         game.time.events.repeat(85, example_steps[current_step].length + 1, updateLine, this);
     }
 
+}
+
+function moveToCuriousClickState() {
+  game.state.start('curiosityClick');
+  current_step_index = -1;
 }
 

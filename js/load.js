@@ -5,8 +5,18 @@ var loadState = {
         /*
         Place to load all assets and show loading screen on loading.
         */
+        game.stage.backgroundColor = "#8BC34A";
 
-        var loadingLabel = game.add.text(80, 150, 'loading...', {font: '30px Courier', fill: '#fff'});
+        var game_label = game.add.text(game.world.centerX, game.world.centerY + 50, 'Mind Math', {font: '60px Courier', fill: '#fff'});
+        game_label.anchor.setTo(0.5);
+        game_label.alpha = 0.1;
+        game.add.tween(game_label).to( { alpha: 1 }, 5000, "Linear", true).loop();
+
+        var loading_txt = game.add.text(game.world.centerX, game.world.centerY + 100, '..(^_^)..', {font: '30px Courier', fill: '#fff'});
+        loading_txt.anchor.setTo(0.5);
+        game.add.tween(loading_txt).to( { y: game.world.centerY + 150 }, 2400, Phaser.Easing.Bounce.Out, true).loop();
+        
+        
 
         //Load your images, spritesheets, bitmaps...
         //Example: game.load.image('boiler-logo', 'assets/img/boilerplate-logo.png');
@@ -31,9 +41,9 @@ var loadState = {
 
     create: function () {
 
-        game.stage.setBackgroundColor('#000');
+        //game.stage.setBackgroundColor('#000');
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
         //game.state.start('curiosityClick');
-        game.state.start('questionDisplay');
+        game.state.start('menu');
     }
 };
