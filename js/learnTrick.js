@@ -25,6 +25,10 @@ var learnTrickState = {
     board.scale.setTo(0.75, 0.75);
     board.anchor.setTo(0.5);
 
+    warning_user_text = game.add.text(game.world.centerX, game.world.centerY, 'Please hold on dear! You crashed me!\n   Press back and help me recover.', {fill: "#fff", font: "20px"});
+    warning_user_text.anchor.setTo(0.5);
+    warning_user_text.alpha = 0;
+
     getSteps();
 
     text = game.add.text(game.world.centerX ,game.world.centerY - 250, '', { font: "15pt Courier", fill: "#fff", stroke: "#119f4e", strokeThickness: 2 });
@@ -38,10 +42,11 @@ var learnTrickState = {
 
     nextLine();
 
-    var navigate_button = game.add.button(game.world.centerX ,game.world.centerY + 250, 'text_button', showNextStep);
+    navigate_button = game.add.button(game.world.centerX ,game.world.centerY + 250, 'text_button', showNextStep);
     navigate_button.anchor.setTo(0.5);
     navigate_button_txt = game.add.text(game.world.centerX ,game.world.centerY + 250, 'Next Step', {fill: '#fff', font: "20px"});
     navigate_button_txt.anchor.setTo(0.5);
+    navigate_button.visible = false;
 
     var curious_kid_button = game.add.button(game.world.centerX ,game.world.centerY + 350, 'text_button', moveToCuriousClickState);
     curious_kid_button.anchor.setTo(0.5);
@@ -217,7 +222,10 @@ function playTutorial() {
 }
 
 function showNextStep() {
-  game.time.events.add(Phaser.Timer.SECOND, nextLine, this);
+  if (current_step < tutorial_steps.length || current_step < example_steps.length) {
+    navigate_button.visible = false;
+    game.time.events.add(Phaser.Timer.SECOND, nextLine, this);
+  }
 
   if(example_steps[current_step] != undefined) {
     example_text_full.setText(example_text_full.text +'\n'+ example_steps[current_step]);
@@ -230,7 +238,7 @@ function showNextStep() {
 }
 
 function updateLine() {
-
+  try {
     if (tutorial_line.length< tutorial_steps[current_step].length || example_line.length < example_steps[current_step].length)
     {
         tutorial_line = tutorial_steps[current_step].substr(0, tutorial_line.length + 1);
@@ -244,7 +252,11 @@ function updateLine() {
         //  Wait 2 seconds then start a new tutorial_line
         // game.time.events.add(Phaser.Timer.SECOND * 2, nextLine, this);
     }
-
+  }
+  catch(e) {
+    warning_user_text.alpha = 1
+    console.log(e);
+  }
 }
 
 function nextLine() {
@@ -257,8 +269,13 @@ function nextLine() {
         example_line = '';
         game.time.events.repeat(85, tutorial_steps[current_step].length + 1, updateLine, this);
         game.time.events.repeat(85, example_steps[current_step].length + 1, updateLine, this);
+        game.time.events.onComplete.add(showNavigationButton, this);
     }
 
+}
+
+function showNavigationButton() {
+  navigate_button.visible = true;
 }
 
 function moveToCuriousClickState() {

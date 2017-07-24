@@ -19,12 +19,16 @@ var curiosityClickState = {
       board.scale.setTo(0.75, 0.75);
       board.anchor.setTo(0.5);
 
+      warning_user_text = game.add.text(game.world.centerX, game.world.centerY, 'Please hold on dear! You crashed me!\n   Press back and help me recover.', {fill: "#fff", font: "20px"});
+      warning_user_text.anchor.setTo(0.5);
+      warning_user_text.alpha = 0;
+
       navigate_button = game.add.button(game.world.centerX ,game.world.centerY + 250, 'text_button', showNext);
       navigate_button.anchor.setTo(0.5);
       navigate_button_text = game.add.text(game.world.centerX ,game.world.centerY + 250, 'Next Step', {fill: '#fff', font: "20px"});
       navigate_button_text.anchor.setTo(0.5);
       getExplanationSteps();
-      //navigate_button.visible = false;
+      navigate_button.visible = false;
 
       explanation_text = game.add.text(game.world.centerX ,game.world.centerY, 'SomeThing', { font: "15pt Courier", fill: "#fff", stroke: "#119f4e", strokeThickness: 2 });
       explanation_text.anchor.setTo(0.5);
@@ -67,6 +71,7 @@ function moveToLearnTrick() {
 
 function showNext() {
   if (current_step_index < explanation_steps.length ) {
+    navigate_button.visible = false;
     game.time.events.add(Phaser.Timer.SECOND, showNextLine, this);
   }
 
@@ -77,22 +82,26 @@ function showNext() {
     navigate_button_text.setText('Finish');
   }
 
-  //navigate_button.visible = false;
 }
 
 function updateNextLine() {
-
-  if (line.length < explanation_steps[current_step_index].length)
-  {
-      line = explanation_steps[current_step_index].substr(0, line.length + 1);
-      // text.text = line;
-      explanation_text.setText(line);
+  
+  try {
+   if (line.length < explanation_steps[current_step_index].length)
+    {
+        line = explanation_steps[current_step_index].substr(0, line.length + 1);
+        // text.text = line;
+        explanation_text.setText(line);
+    }
+    else
+    {
+        //  Wait 2 seconds then start a new line
+    }
   }
-  else
-  {
-      //  Wait 2 seconds then start a new line
+  catch (e) {
+    warning_user_text.alpha = 1
+    console.log(e);
   }
-
 }
 
 function showNextLine() {
@@ -102,9 +111,13 @@ function showNextLine() {
     if (current_step_index < explanation_steps.length)
     {
         line = '';
-        game.time.events.repeat(80, explanation_steps[current_step_index].length + 1, updateNextLine, this);
+        type_text_event = game.time.events.repeat(80, explanation_steps[current_step_index].length + 1, updateNextLine, this);
+        game.time.events.onComplete.add(showNavigationButton, this);
     }
-  
-  //navigate_button.visible = true;
+   
+}
+
+function showNavigationButton(){
+  navigate_button.visible = true;
 }
 
