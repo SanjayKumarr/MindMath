@@ -10,9 +10,7 @@ var menuState = {
 
     var welcome_txt = game.add.text(game.world.centerX,game.world.centerY - 200, WELCOME_USER, {fill: '#fff', font: "30px"});
     welcome_txt.anchor.setTo(0.5);
-
-    var update_board_design_txt_temp = game.add.text(game.world.centerX - 380,game.world.centerY - 120, 'The board design has to be updated. The board design has to be updated. The board design has to be updated. The board design', {fill: '#fff', font: "15px"});
-
+    
     var btn_text_style = {fill: '#fff', font: "20px"};
 
     var help_tux_btn = game.add.button(game.world.centerX, 500, 'text_button', startHomeWork);

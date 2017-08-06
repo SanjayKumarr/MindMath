@@ -7,7 +7,7 @@ var questionDisplayState = {
     showHomeWorkScreen();
     var question_txt = getQuestion(!moving_back);
     
-    var homework_question_txt = game.add.text(game.world.centerX,game.world.centerY - 200, question_txt, {fill: '#fff', font: "30px"});
+    var homework_question_txt = game.add.text(game.world.centerX,game.world.centerY - 200, question_txt, {fill: '#fff', font: "20px"});
     homework_question_txt.anchor.setTo(0.5);
   
   }

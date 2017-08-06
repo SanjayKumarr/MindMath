@@ -50,9 +50,12 @@ var playState = {
     padding: 10,
     borderWidth: 0,
     placeHolder: '',
-    type: PhaserInput.InputType.number
+    type: PhaserInput.InputType.number,
+    zoom: false
   });
   answer_field.anchor.setTo(0.5);
+  answer_field.blockInput = false
+  answer_field.startFocus();
 
   enter_key = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
   enter_key.onDown.add(verifyAnswer, this);
