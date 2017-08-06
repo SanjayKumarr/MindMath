@@ -31,22 +31,22 @@ var learnTrickState = {
 
     getSteps();
 
-    text = game.add.text(game.world.centerX ,game.world.centerY - 250, '', { font: "15pt Courier", fill: "#fff", stroke: "#119f4e", strokeThickness: 2 });
+    text = game.add.text(game.world.centerX ,game.world.centerY - 250, '', { font: "10pt Courier", fill: "#fff", stroke: "#119f4e", strokeThickness: 2 });
     text.anchor.setTo(0.5);
 
     example_text = game.add.text(game.world.centerX ,game.world.centerY + 50, '', { font: "20pt Courier", fill: "#fff", stroke: "#119f4e", strokeThickness: 2 });
     example_text.anchor.setTo(0.5);
 
-    example_text_full = game.add.text(game.world.centerX - 250 ,game.world.centerY - 130, '', { font: "20pt Courier", fill: "#fff", stroke: "#119f4e", strokeThickness: 2 });
+    example_text_full = game.add.text(game.world.centerX - 250 ,game.world.centerY - 130, '', { font: "10pt Courier", fill: "#fff", stroke: "#119f4e", strokeThickness: 2 });
     example_text_full.anchor.y = 0.5
 
     nextLine();
 
-    navigate_button = game.add.button(game.world.centerX ,game.world.centerY + 250, 'text_button', showNextStep);
-    navigate_button.anchor.setTo(0.5);
-    navigate_button_txt = game.add.text(game.world.centerX ,game.world.centerY + 250, 'Next Step', {fill: '#fff', font: "20px"});
-    navigate_button_txt.anchor.setTo(0.5);
-    navigate_button.visible = false;
+    navigate_button_nxt = game.add.button(game.world.centerX ,game.world.centerY + 250, 'text_button', showNextStep);
+    navigate_button_nxt.anchor.setTo(0.5);
+    navigate_button_nxt_txt = game.add.text(game.world.centerX ,game.world.centerY + 250, 'Next Step', {fill: '#fff', font: "20px"});
+    navigate_button_nxt_txt.anchor.setTo(0.5);
+    navigate_button_nxt.visible = false;
 
     var curious_kid_button = game.add.button(game.world.centerX ,game.world.centerY + 350, 'text_button', moveToCuriousClickState);
     curious_kid_button.anchor.setTo(0.5);
@@ -89,10 +89,10 @@ function getSteps() {
     ],
 
     1: [
-      'Let us find (x)^2. X is just below 100.',
+      'Let us find (x)². X is just below 100.',
       'Step 01: Find the difference between 100 and this number.',
       'Step 02: Now, Subtract the difference from the number (x).',
-      'Step 03: Find x^2',
+      'Step 03: Find x²',
       'Answer = Step 02 | Step 03'
     ],
 
@@ -105,19 +105,19 @@ function getSteps() {
     ],
 
     3: [
-      'Let us find (Y)^2. Y is just above 100.',
+      'Let us find (Y)². Y is just above 100.',
       'Step 01: Find the difference between the number and 100.',
       'Step 02: Now, Add the difference to the number (y).',
-      'Step 03: Find y^2. Add ',
+      'Step 03: Find y². Add ',
       'Answer = Step 02 | Step 03'
     ],
 
     4: [
-      'Let us find (x0y)^2.           \nDigits are referred from left to right.',
-      'Step 01: Square third digit (y)^2',
+      'Let us find (x0y)².           \nDigits are referred from left to right.',
+      'Step 01: Square third digit (y)²',
       'Step 02: Multiply x with y and double the answer\n( x * y * 2 ).\nAdd zero in front, if it is in single digit.',
-      'Step 03: Square first digit (x)^2',
-      'Answer = Step 03 | Step 02 | Step 01 \n = (x)^2 | ( x * y * 2 ) | (y)^2'
+      'Step 03: Square first digit (x)²',
+      'Answer = Step 03 | Step 02 | Step 01 \n = (x)² | ( x * y * 2 ) | (y)²'
     ],
 
     5: [
@@ -145,7 +145,7 @@ function getSteps() {
 
   var all_example_steps = {
     0: [
-      'Question: (45)^2',
+      'Question: (45)²',
       'Next number to 4 is 5',
       '4 * 5 = 20',
       'Put 25 at the end of the answer',
@@ -153,10 +153,10 @@ function getSteps() {
     ],
 
     1: [
-      'Question: (96)^',
+      'Question: (96)²',
       'Difference is 4 (100 - 96 = 4)',
       '96 - 4 = 92',
-      '(4)^2 = 16',
+      '(4)² = 16',
       'Answer = 9216'
     ],
 
@@ -169,18 +169,18 @@ function getSteps() {
     ],
 
     3: [
-      'Question: (104)^2',
+      'Question: (104)²',
       'Difference is 4 (104 - 100 = 4)',
       '104 + 4 = 108',
-      '(4)^2 = 16',
+      '(4)² = 16',
       'Answer = 10816'
     ],
 
     4: [
-      'Question: (504)^2',
-      '(4)^2 = 16',
+      'Question: (504)²',
+      '(4)² = 16',
       '5 * 4 * 2 = 40',
-      '(5)^2 = 25',
+      '(5)² = 25',
       'Answer = 254016'
     ],
 
@@ -223,15 +223,15 @@ function playTutorial() {
 
 function showNextStep() {
   if (current_step < tutorial_steps.length || current_step < example_steps.length) {
-    navigate_button.visible = false;
+    navigate_button_nxt.visible = false;
     game.time.events.add(Phaser.Timer.SECOND, nextLine, this);
   }
 
   if(example_steps[current_step] != undefined) {
-    example_text_full.setText(example_text_full.text +'\n'+ example_steps[current_step]);
+    example_text_full.setText(example_text_full.text +'\n >   '+ example_steps[current_step]);
   }
   else {
-    navigate_button_txt.setText('Finish');
+    navigate_button_nxt_txt.setText('Finish');
   }
 
   
@@ -269,13 +269,13 @@ function nextLine() {
         example_line = '';
         game.time.events.repeat(85, tutorial_steps[current_step].length + 1, updateLine, this);
         game.time.events.repeat(85, example_steps[current_step].length + 1, updateLine, this);
-        game.time.events.onComplete.add(showNavigationButton, this);
+        game.time.events.onComplete.add(showNavigationBtn, this);
     }
 
 }
 
-function showNavigationButton() {
-  navigate_button.visible = true;
+function showNavigationBtn() {
+  navigate_button_nxt.visible = true;
 }
 
 function moveToCuriousClickState() {
