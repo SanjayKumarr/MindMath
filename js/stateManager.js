@@ -17,6 +17,9 @@ game.state.add('questionDisplay', questionDisplayState);
 game.state.add('learnTrick', learnTrickState);
 game.state.add('curiosityClick', curiosityClickState);
 game.state.add('play', playState);
+game.state.add('end', endState);
+game.state.add('tricksList', tricksListState);
+game.state.add('calcChallenge', calcChallengeState);
 
 game.state.start('boot');
 
