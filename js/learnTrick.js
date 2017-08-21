@@ -29,6 +29,9 @@ var learnTrickState = {
     warning_user_text.anchor.setTo(0.5);
     warning_user_text.alpha = 0;
 
+    game.add.text(game.world.centerX, game.world.centerY + 110, 'We recommend to start over instead going back as it helps you learn it meaningfully!', {fill: "#fff", font: "13px"}).anchor.setTo(0.5);
+    
+
     getSteps();
 
     text = game.add.text(game.world.centerX ,game.world.centerY - 250, '', { font: "10pt Courier", fill: "#fff", stroke: "#119f4e", strokeThickness: 2 });
@@ -42,15 +45,24 @@ var learnTrickState = {
 
     nextLine();
 
-    navigate_button_nxt = game.add.button(game.world.centerX ,game.world.centerY + 250, 'text_button', showNextStep);
+    navigate_button_nxt = game.add.button(game.world.centerX ,game.world.centerY + 230, 'text_button', showNextStep);
     navigate_button_nxt.anchor.setTo(0.5);
-    navigate_button_nxt_txt = game.add.text(game.world.centerX ,game.world.centerY + 250, 'Next Step', {fill: '#fff', font: "20px"});
+    navigate_button_nxt.scale.setTo(0.70, 0.70);
+    navigate_button_nxt_txt = game.add.text(game.world.centerX,game.world.centerY + 230, 'Next step', {fill: '#fff', font: "17px"});
     navigate_button_nxt_txt.anchor.setTo(0.5);
     navigate_button_nxt.visible = false;
 
-    var curious_kid_button = game.add.button(game.world.centerX ,game.world.centerY + 350, 'text_button', moveToCuriousClickState);
+    navigate_button_prv = game.add.button(game.world.centerX ,game.world.centerY + 300, 'text_button', startOverLearning);
+    navigate_button_prv.anchor.setTo(0.5);
+    navigate_button_prv.scale.setTo(0.70, 0.70);
+    navigate_button_prv_txt = game.add.text(game.world.centerX,game.world.centerY + 300, '↺ Start over', {fill: '#fff', font: "17px"});
+    navigate_button_prv_txt.anchor.setTo(0.5);
+    navigate_button_prv.visible = false;
+
+    var curious_kid_button = game.add.button(game.world.centerX ,game.world.centerY + 370, 'text_button', moveToCuriousClickState);
     curious_kid_button.anchor.setTo(0.5);
-    var curious_kid_button = game.add.text(game.world.centerX ,game.world.centerY + 350, 'Curiousity clicks!', {fill: '#fff', font: "20px"});
+    curious_kid_button.scale.setTo(0.70, 0.70);
+    var curious_kid_button = game.add.text(game.world.centerX ,game.world.centerY + 370, 'Curiousity clicks!', {fill: '#fff', font: "15px"});
     curious_kid_button.anchor.setTo(0.5);
     // var reg = {};
     // reg.track = game.add.audio('track');
@@ -217,10 +229,6 @@ function getSteps() {
   example_steps = chosen_example_steps;
 }
 
-function playTutorial() {
-
-}
-
 function showNextStep() {
   if (current_step < tutorial_steps.length || current_step < example_steps.length) {
     navigate_button_nxt.visible = false;
@@ -276,10 +284,17 @@ function nextLine() {
 
 function showNavigationBtn() {
   navigate_button_nxt.visible = true;
+  navigate_button_prv.visible = true;
 }
 
 function moveToCuriousClickState() {
   game.state.start('curiosityClick');
   current_step_index = -1;
+}
+
+function startOverLearning() {
+  current_step = -1;
+  nextLine();
+  example_text_full.setText(''); 
 }
 
