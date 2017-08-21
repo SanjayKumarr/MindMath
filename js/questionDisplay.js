@@ -28,6 +28,7 @@ function getQuestion(get_new_question) {
   ];
   
   if(is_user_selecting_question) {
+    is_user_selecting_question = false;
     chosen_question_number = user_selected_question;
   }
   else {
@@ -79,4 +80,5 @@ function learnTrick() {
 
 function moveToMenu() {
   game.state.start('menu');
+  moving_back = true;
 }
