@@ -29,6 +29,9 @@ var loadState = {
         game.load.image('penguin_helper', 'assets/img/penguin_with_books.png');
         game.load.image('back_button', 'assets/img/back_button.png');
         game.load.image('board', 'assets/img/board.jpg');
+        game.load.image('penguin_computer', 'assets/img/penguin_using_computer.png');
+        game.load.image('boy_desk', 'assets/img/boy_at_desk.png');
+        game.load.image('monitor', 'assets/img/monitor.png');
         //game.load.audio('chalk_track', ['assets/track/pencilsketching.mp3']);
 
         //Load your sounds, efx, music...
@@ -43,7 +46,7 @@ var loadState = {
 
         //game.stage.setBackgroundColor('#000');
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
-        //game.state.start('curiosityClick');
+        //game.state.start('learnTrick');
         game.state.start('menu');
     }
 };
