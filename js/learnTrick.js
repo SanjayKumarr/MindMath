@@ -29,7 +29,7 @@ var learnTrickState = {
     warning_user_text.anchor.setTo(0.5);
     warning_user_text.alpha = 0;
 
-    game.add.text(game.world.centerX, game.world.centerY + 110, 'We recommend to start over instead going back as it helps you learn it meaningfully!', {fill: "#fff", font: "13px"}).anchor.setTo(0.5);
+    game.add.text(game.world.centerX, game.world.centerY + 110, 'To learn a step again, We recommend to start over as it helps you learn it meaningfully!', {fill: "#fff", font: "13px"}).anchor.setTo(0.5);
     
 
     getSteps();
