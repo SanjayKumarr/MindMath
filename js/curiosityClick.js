@@ -44,69 +44,93 @@ function getExplanationSteps() {
   var all_explanation_steps = {
     0: [
       'So let\'s look at the math behind finding \nthe square of a number ending with 5',
-      'We will just recollect our algebraic skills. \n (ax + b)² = a² . x² + 2abx + b²',
+      'We will just recollect our algebraic skills. \n (ax + b)² = a² . x² + 2 * a * b * x + b²',
       'Now, take 25 for example. In the above form.',
 	    '25 is twice of 10 + 5. (10*2 + 5)',
 	    'Likewise for any number ending with 5, \nit will be (a * 10 + 5)',
-      'Back to algebra!, (10a + 5)² = a² . 10²+ 2. 10a . 5 + 5²',
-      '= a² . 10² + a.10²+ 5²',
-      '= a (a + 1) . 10² + 25',
+      'Back to algebra!, \n(10a + 5)² = a² * 10²+ 2 * 10 * a * 5 + 5²',
+      '= a² . 10² + a * 10²+ 5²',
+      '= a * (a + 1) * 10² + 25',
       'To add a 2 digits number with 100, replace 0s',
-      'So, a (a + 1) | 25 is the answer!',
-      'For 25, 2 (2 + 1) | 25.'
+      'So, a * (a + 1) | 25 is the answer!',
+      'For 25, 2 * (2 + 1) | 25.'
     ],
     1: [
-      "So let's look at the math behind finding the \nsquare of a number just below 100.",
+      'So let’s look at the math behind finding\nthe square of a number just below 100?',
       'Say for example, we shall take 96.',
       'Is that OK to write 96 as (100 - 4)?',
       'To find 96², we will find (100 - 4)²',
-      'Cool, Now recollect your algebraic skills!\n(a-b)² = a² - 2ab + b²',
-      'You can rewrite it as a(a-b-b) + b²',
-      'Which is 100(100-4 - 4) + 4²',
-      'To add a 2 digits number with 100, replace 0s',
-      'So you get (96 - 4) | 4²',
-      'Which is (Number - difference) | difference²'
+      'Cool, Now recollect your algebraic skills!\n (a-b)² = a² - 2 * a * b + b²',
+      'Now,In the decimal system, \n100 * 100 is 100 shifted to the left two places',
+      'That is 100² + 4²  = 10016 \njust from the place values',
+      'The trick here is to subtract 8 * 100. \nThat accounts a * (b * 2)',
+      'However, by place value this is subtracting \n8 from 100.  (100 - 8) = 92',
+      'So we get (96 - 4) or (100 - 8) | 4²',
+      'Simply is (Number - difference) | difference²'
+ 
     ],
     2: [
-      'Than a proof, we will see a quick and \nintuitive way to multiply a number with 9.',
-      'Say for example, we will take 68. To find 68 * 9,',
-      'Ten times 68 subtracted with 68 \nWe can find ( 68 * 10 ) - 68',
-      '(680 - 68). Quickly borrowing and subtracting or \nlike below,',
-      'Next number to 6 is 7',
-      'So, (68 - 7) | (10 - 8) is the answer'
+      'Than a proof, we will see a quick intuitive \nway to multiply a number xy with 9.',
+      'Say for example, we will take 68. \nHere x is 6 and y is 8. To find 68 * 9,',
+      'We can find ( 68 * 10 ) - 68',
+      'Since the 6 in 68 represents 60 it \ndoesn\'t change the 1s place of the product.',
+      'It is determined by 9 * y. That is 9 * 8.',
+      'As y increases by 1, the 1s place decreases \nby 1 and so we need to subtract.',
+      'And hence, shortly we see it as,',
+      '(68 - 7) | (10 - 8).'
+      
     ],
     3: [
-      "So let\'s look at the math behind \nfinding the square of a number just above 100",
+      'So let’s look at the math behind finding \nthe square of a number just above 100?',
       'Say for example, we shall take 104.',
       'Is that OK to write 104 as (100 + 4)?',
       'To find 104², we will find (100 + 4)²',
-      'Cool, Now recollect your algebraic skills! \n(a+b)² = a² + 2ab + b²',
-      'You can rewrite it as a(a+b+b) + b²',
-      'Which is 100(100+4 + 4) + 4²',
-      'To add a 2 digits number with 100, replace 0s',
-      'So we get (104 + 4) | 4²',
-      'Which is (Number + surplus) | surplus²'
-
+      'Cool, Now recollect your algebraic skills! \n(a+b)² = a² + 2 * a * b + b²',
+      'Now, In the decimal system, \n100 * 100 is 100 shifted to the left two places',
+      'That is 100² + 4²  = 10016 \njust from the place values',
+      'The trick here is to add 8 * 100. \nThat accounts a * (b * 2)',
+      'However, by place value this is just \nadding 8 to 100.  (100 + 8) = 108',
+      'So we get (104 + 4) or (100 + 8) | 4²',
+      'Simply is (Number + surplus) | surplus²'
     ],
     4: [
-      'Sorry, We are drafting a good explanation\nfor two tricks of this kind.'
+      'Does it look intimidating?! It’s so simple.' ,
+      'Recollect your algebraic skills! \n(a+b)² = a² + 2 * a * b + b²',
+      'Now take an example, (504)².',
+      'That is, (5 * 100 + 4 * 1)² \n= 5 * 5 * 100 * 100 + 40 * 100 + 16',
+      'And to our rescue, we just use \nthe position value of the numbers',
+      'Simply, num * 100 is moving to the left, \ntwo digits.',
+      'Likewise, num * 100 * 100 is moving \nto the left, four digits.',
+      'And so we get 254016.'
+    
     ],
     5: [
-      'Again, more than a proof, an intuitive way to think.',
-      'To multiply any number with 5,',
-      'Can we multiply the number with 10 \nand find the half of it?',
-      'Or, Find the half of it and add zero to it.',
-      'Both means the same thing!'
+      'This is a good example of Halving and doubling, \nan ancient means of multiplication.', 
+      'For example, 64 * 5 = 32 * 10. \nWhere 32 is half of 64.',
+      'But as odd numbers have their \ndecimals while halved, be careful.',
+      'We just need to include them.',
+      'In terms of the trick, \n63 * 5 = (31 * 10) + 5 = 315',
     ],
     6: [
-      'So, here  we\'ll multiply any 2 digits number \n with 11 as we do it usually.',
-      'Very simple, the number multiplied with 1 is \n the number itself.',
-      'So, by means of multiplication xy * 11,',
-      '= x(x+y)y. So simple, right!'
-
+      'Say for example, you take 43 * 11',
+      '= 43 * 10 + 43',
+      '= 4 * 100 + 3 * 10 + 4 * 10 + 3',
+      'Surprise!,  4+3 goes in the 10s place.',
+      'And simply add numbers by place value.',
+      'It is x | x+y | y'
     ],
     7: [
-      'Sorry, We are drafting a good explanation\nfor two tricks of this kind.'
+      'We shall take an example, 43 * 47.',
+      'We can write it as (40 + 3) * 47 and on expanding,',
+      '43 * 47 = 40 * 47 + 3 * 47',
+      '= 40 * (40+7) + 3 * (40+7)',
+      '= 40² + 40 * 7 + 40 * 3 + 3 * 7',
+      '= 16 * 100 + 40 * (7+3) + 21',
+      '= 16 * 100 + 4 * 100 + 40 * 10 +21',
+      '= 20 * 100 + 2 * 10 + 1',
+      'So the requirement that the numbers in \nthe 10s place be the same is to create a square.',
+      'And the 7 + 3 = 10 to move the result \nleft one place.'
+    
     ]
   }
 
