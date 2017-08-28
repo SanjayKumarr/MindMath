@@ -89,7 +89,11 @@ This activity has been developed under the SugarLabs organization in Google Summ
 
 **Mentor: Tony Anderson**
 
+**Repository: [MindMath](https://github.com/SanjayKumarr/MindMath/)**
+
 Student: [Sanjay Kumar](https://github.com/SanjayKumarr/)
+
+***
 
 
 
