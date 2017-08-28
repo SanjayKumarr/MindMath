@@ -1,14 +1,14 @@
 var tricksList = [
-      'Sqaure of a number ending with 5',
-      'Sqaure of a number just below 100',
+      'Square of a number ending with 5',
+      'Square of a number just below 100',
       'Multiplication with 9',
-      'Sqaure of a number just below 100',
+      'Square of a number just below 100',
       "Square of any 3 digit number with 0 in ten's place",
       'Multiplication with 5',
       'Multiplication with 11',
-      "Multiply two numbers when sum of 1's digit is 10"
+      "Multiply two numbers when sum of 1's digit is 10."
     ];
-
+   
 var tricksListState = {
 
     create: function () {
@@ -27,10 +27,10 @@ var tricksListState = {
       trick_text = game.add.text(game.world.centerX,game.world.centerY - 100, tricksList[0], {fill: '#fff', font: "20px"});
       trick_text.anchor.setTo(0.5);
 
-      var previous_trick = game.add.button(game.world.centerX - 340 ,game.world.centerY - 100, 'back_button', this.showPreviousTrick);
+      previous_trick = game.add.button(game.world.centerX - 340 ,game.world.centerY - 100, 'back_button', this.showPreviousTrick);
       previous_trick.anchor.setTo(0.5)
       previous_trick.scale.setTo(0.50, 0.50);
-      var next_trick = game.add.button(game.world.centerX + 340 ,game.world.centerY - 100, 'back_button', this.showNextTrick);
+      next_trick = game.add.button(game.world.centerX + 340 ,game.world.centerY - 100, 'back_button', this.showNextTrick);
       next_trick.anchor.setTo(0.5)
       next_trick.scale.setTo(-0.50, 0.50);
 
@@ -54,15 +54,25 @@ var tricksListState = {
     },
 
     showNextTrick: function() {
+      next_trick.alpha = 1;
+      previous_trick.alpha = 1;
       if (user_selected_question < tricksList.length-1) {
         user_selected_question += 1;
+      }
+      else {
+        next_trick.alpha = 0.5;
       }
       trick_text.setText(tricksList[user_selected_question]);
     },
 
     showPreviousTrick: function() {
-    if (user_selected_question > 0) {
-        user_selected_question -= 1;
+      next_trick.alpha = 1;
+      previous_trick.alpha = 1;
+      if (user_selected_question > 0) {
+          user_selected_question -= 1;
+        }
+      else {
+        previous_trick.alpha = 0.5;
       }
       trick_text.setText(tricksList[user_selected_question]);
     }

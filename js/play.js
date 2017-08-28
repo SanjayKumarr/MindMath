@@ -96,7 +96,7 @@ function setInputField(placeholder_text_condition) {
 function setQuestion() {
   switch(chosen_question_number) {
     case 0:
-    //Sqaure of a number ending with 5
+    //Square of a number ending with 5
     question_num = Math.round(Math.random() * 9) * 10 + 5;
     var first_digit = Math.floor(question_num/10);
 
@@ -113,7 +113,7 @@ function setQuestion() {
     question_txt.setText('( ' + question_num + ' )²');
     answer_helper_middle.setText('');
     answer_helper_left.setText(question_num +' - '+ (100 - question_num));
-    answer_helper_right.setText('Sqaure of '+ (100 - question_num));
+    answer_helper_right.setText('Square of '+ (100 - question_num));
     break;
 
     case 2:
@@ -128,13 +128,13 @@ function setQuestion() {
     answer_helper_right.setText('10 - '+ second_digit);
     break;
     case 3:
-    // sqaure of number just above 100
+    // Square of number just above 100
     question_num = getRandomInt(104, 109);
 
     question_txt.setText('( ' + question_num + ' )²');
     answer_helper_middle.setText('');
     answer_helper_left.setText(question_num +' + '+ (question_num - 100));
-    answer_helper_right.setText('Sqaure of '+ (question_num - 100));
+    answer_helper_right.setText('Square of '+ (question_num - 100));
     break;
 
     case 4:
@@ -146,7 +146,7 @@ function setQuestion() {
     question_txt.setText('( ' + question_num + ' )²'); 
     answer_helper_middle.setText('(' + first_digit +') * ('+ last_digit + ') * 2');
     answer_helper_left.setText('Square of '+ first_digit);
-    answer_helper_right.setText('Sqaure of '+ last_digit);
+    answer_helper_right.setText('Square of '+ last_digit);
     break;
 
     case 5:

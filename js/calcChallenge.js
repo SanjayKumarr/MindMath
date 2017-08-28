@@ -192,7 +192,7 @@ function getChallengeQuestion() {
   chosen_challenge = Math.round(Math.random() * 7);
   switch(chosen_challenge) {
     case 0:
-    //Sqaure of a number ending with 5
+    //Square of a number ending with 5
     challenge_question = Math.round(Math.random() * 9) * 10 + 5;
     var first_digit = Math.floor(challenge_question/10);
 
@@ -216,7 +216,7 @@ function getChallengeQuestion() {
     break;
 
     case 3:
-    // sqaure of number just above 100
+    // Square of number just above 100
     challenge_question = getRandomInt(104, 109);
 
     challenge_question_txt.setText('( ' + challenge_question + ' )²');

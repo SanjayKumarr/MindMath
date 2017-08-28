@@ -94,64 +94,64 @@ function getSteps() {
   var all_tutorial_steps = {
     0: [
       'Let us find (x5)²',
-      'Step 01: Think of the number next to x.',
-      'Step 02: x * number next to x',
-      'Step 03: Put 25 at the end of the answer.',
-      'Answer = Step 02 | 25'
+      'Step 1: Think of the number next to x.',
+      'Step 2: x * number next to x',
+      'Step 3: Put 25 at the end of the answer.',
+      'Answer = Step 2 | 25'
     ],
 
     1: [
       'Let us find (x)². X is just below 100.',
-      'Step 01: Find the difference between 100 and this number.',
-      'Step 02: Now, Subtract the difference from the number (x).',
-      'Step 03: Find x²',
-      'Answer = Step 02 | Step 03'
+      'Step 1: Find the difference between 100 and this number.',
+      'Step 2: Now, Subtract the difference from the number (x).',
+      'Step 3: Find x²',
+      'Answer = Step 2 | Step 3'
     ],
 
     2: [
-      'Let us consider xy * 9',
-      'Step 01: Think of next number of x.',
-      'Step 02: Subtract it from xy',
-      'Step 03: Find 10 - y',
-      'Answer = Step 02 | Step 03'
+      'Consider multiplying a two digit number with 9.',
+      'Step 1: Think of next number to ten\'s digit.',
+      'Step 2: Subtract it from the number',
+      'Step 3: Find 10 - [one\'s digit]',
+      'Answer = Step 2 | Step 3'
     ],
 
     3: [
       'Let us find (Y)². Y is just above 100.',
-      'Step 01: Find the difference between the number and 100.',
-      'Step 02: Now, Add the difference to the number (y).',
-      'Step 03: Find y². Add ',
-      'Answer = Step 02 | Step 03'
+      'Step 1: Find the difference between the number and 100.',
+      'Step 2: Now, Add the difference to the number (y).',
+      'Step 3: Find y². Add ',
+      'Answer = Step 2 | Step 3'
     ],
 
     4: [
       'Let us find (x0y)².           \nDigits are referred from left to right.',
-      'Step 01: Square third digit (y)²',
-      'Step 02: Multiply x with y and double the answer\n( x * y * 2 ).\nAdd zero in front, if it is in single digit.',
-      'Step 03: Square first digit (x)²',
-      'Answer = Step 03 | Step 02 | Step 01 \n = (x)² | ( x * y * 2 ) | (y)²'
+      'Step 1: Square third digit (y)²',
+      'Step 2: Multiply x with y and double the answer\n( x * y * 2 ).\nAdd zero in front, if it is in single digit.',
+      'Step 3: Square first digit (x)²',
+      'Answer = Step 3 | Step 2 | Step 1 \n = (x)² | ( x * y * 2 ) | (y)²'
     ],
 
     5: [
       'For now we will consider only the even numbers.',
-      'Step 01: Find the half of the number (Number / 2)',
-      'Step 02: Multiply by 10. (Add a zero in the end)',
+      'Step 1: Find the half of the number (Number / 2)',
+      'Step 2: Multiply by 10. (Add a zero in the end)',
       'Answer!'
     ],
 
     6: [
-      'For any two-digit number.\nDigits referred from left to right.',
-      'Step 01: Add the digits',
-      'Step 02: Place the sum in between the digits.',
+      'To multiply any two-digit number by 11',
+      'Step 1: Add the digits',
+      'Step 2: Place the sum in between the digits.',
       'Answer!'
     ],
 
     7: [
       'For any two numbers with the sum of their one’s digit = 10 and \n have the same number in the ten’s digit.',
-      'Step 01: Think of the number (x) next to the number\nin ten’s digit (y)',
-      'Step 02: Find x * y',
-      'Step 03: Multiply both numbers’ one digit',
-      'Answer = Step 02 | Step 03'
+      'Step 1: Think of the number (x) next to the number\nin ten’s digit (y)',
+      'Step 2: Find x * y',
+      'Step 3: Multiply both numbers’ one digit',
+      'Answer = Step 2 | Step 3'
     ]
   }
 
@@ -235,11 +235,13 @@ function showNextStep() {
     game.time.events.add(Phaser.Timer.SECOND, nextLine, this);
   }
 
-  if(example_steps[current_step] != undefined) {
+  if(example_steps[current_step + 1] != undefined) {
     example_text_full.setText(example_text_full.text +'\n >   '+ example_steps[current_step]);
   }
   else {
-    navigate_button_nxt_txt.setText('Finish');
+    navigate_button_nxt_txt.setText('Done!');
+    navigate_button_nxt.alpha = 0.5;
+
   }
 
   
@@ -295,6 +297,9 @@ function moveToCuriousClickState() {
 function startOverLearning() {
   current_step = -1;
   nextLine();
-  example_text_full.setText(''); 
+  example_text_full.setText('');
+  navigate_button_nxt_txt.setText('Next');
+  navigate_button_nxt.alpha = 1;
+  navigate_button_nxt.visible = false;
 }
 

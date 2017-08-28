@@ -17,11 +17,11 @@ var questionDisplayState = {
 function getQuestion(get_new_question) {
   var question_prefix = 'Today, My teacher taught me the trick to ';
   var homework_questions = [
-    "find \n the sqaure of any number ending with 5!",
-    "find \n the square of numbers just below 100!",
+    "find \n the Square of any number ending with 5!",
+    "find \n the Square of numbers just below 100!",
     "\n multiply a number with 9",
-    "find \n the sqaure of number just above 100!",
-    "find the square of \n any three digit number with a zero in between!",
+    "find \n the Square of number just above 100!",
+    "find the Square of \n any three digit number with a zero in between!",
     "\n multiply any number with 5!",
     "multiply \n a two digit number with 11",
     "multiply two digits \n when the sum of the one's digit is 10",
@@ -59,7 +59,7 @@ function showHomeWorkScreen() {
 
   var know_trick_btn = game.add.button(game.world.centerX + 150,600, 'text_button', doHomeworkForTux);
   know_trick_btn.anchor.setTo(0.5);
-  var know_trick_txt = game.add.text(game.world.centerX + 150,600, 'I Know the trick', btn_text_style);
+  var know_trick_txt = game.add.text(game.world.centerX + 150,600, 'Let me try the trick', btn_text_style);
   know_trick_txt.anchor.setTo(0.5);
 
   var penguin_notepad = game.add.sprite(120, 600, 'penguin_notepad');

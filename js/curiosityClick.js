@@ -113,11 +113,13 @@ function getExplanationSteps() {
     ],
     6: [
       'Say for example, you take 43 * 11',
-      '= 43 * 10 + 43',
+      'We write 11 as 10 + 1 and mutliply 43 with it.',
+      '43 * (10 + 1) = 43 * 10 + 43',
+      'Where, 430 is (4 * 100 + 3 * 10)\nAnd 43 is (4 * 10 + 3)',
       '= 4 * 100 + 3 * 10 + 4 * 10 + 3',
-      'Surprise!,  4+3 goes in the 10s place.',
+      'Surprise!,  4+3 goes in the 10s place\nwhile we group the 10s',
       'And simply add numbers by place value.',
-      'It is x | x+y | y'
+      'It is x | x+y | y which is 4 | (7) | 1.'
     ],
     7: [
       'We shall take an example, 43 * 47.',
@@ -150,11 +152,12 @@ function showNext() {
     game.time.events.add(Phaser.Timer.SECOND, showNextLine, this);
   }
 
-  if(explanation_steps[current_step_index] != undefined) {
+  if(explanation_steps[current_step_index + 1] != undefined) {
     explanation_text_full.setText(explanation_text_full.text +'\n >  '+ explanation_steps[current_step_index]);
   }
   else {
-    navigate_button_text.setText('Finish');
+    navigate_button_text.setText('Done!');
+    navigate_button.alpha = 0.5;
   }
 
 }
