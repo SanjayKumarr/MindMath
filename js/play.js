@@ -192,6 +192,24 @@ function setQuestion() {
 
     case 8:
 
+    /*
+    - Here, you will generate the question to be displayed to the user while practising your trick.
+
+    question_num is the number involved in your trick. If it involves more than one number, use it as an array.
+    question_num = getRandomInt(Range-min, Range-max)
+
+    question_txt is the text set on the screen. 
+    Use question_txt.setText() function to do it.
+
+    You must have noticed that we have three helpers on the screen to help the user with clues.
+    You can set the text of each helper using the following variables to their corresponsing places.
+    - answer_helper_left
+    - answer_helper_middle
+    - answer_helper_right
+
+    Now, you need to add a case in the verifyAnser function to verify the user answer entry.
+    */
+
     case 9:
 
     default:
@@ -250,6 +268,14 @@ function verifyAnswer() {
     if (user_answer === question_num[0] * question_num[1]) {
       answered_right = true;
     }
+    break;
+
+    case 8:
+    /*
+    user_answer will have the user entry.
+    question_num will be a number for a single entry or an array for multiple entries as you have defined it above.
+    Set the answered_right to true if the user has answerd right.
+    */
     break;
 
     default:
