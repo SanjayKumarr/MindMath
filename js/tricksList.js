@@ -6,7 +6,8 @@ var tricksList = [
       "Square of any 3 digit number with 0 in ten's place",
       'Multiplication with 5',
       'Multiplication with 11',
-      "Multiply two numbers when sum of 1's digit is 10."
+      "Multiply two numbers when sum of 1's digit is 10.",
+      //"Include your trick to the list of tricks so that the user can choose to learn and play."
     ];
    
 var tricksListState = {
