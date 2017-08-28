@@ -158,7 +158,7 @@ function setQuestion() {
     answer_helper_left.setText('');
     answer_helper_right.setText('');
     break;
-
+      
     case 6:
     // multiply a two digit number with 11  
     while(true) {
