@@ -1,0 +1,9 @@
+#canvas {
+  position: fixed;
+  margin-top: 500px;
+  margin-left: 490px;
+  opacity: 0.5;
+  background:transparent;
+  visibility: hidden;
+
+}
