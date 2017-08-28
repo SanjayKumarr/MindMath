@@ -142,6 +142,12 @@ function verifyChallengeAnswer() {
           answered_right = true;
         }
         break;
+
+        case 8:
+        /*
+          This is very similiar to the changes you have made in the play.js file.
+        */
+        break;
     
         default:
         break;
@@ -264,6 +270,9 @@ function getChallengeQuestion() {
     break;
 
     case 8:
+    /*
+     This is very similiar to the changes you have made in the play.js file.
+    */
     break;
 
     case 9:
