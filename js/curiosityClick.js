@@ -133,7 +133,17 @@ function getExplanationSteps() {
       'So the requirement that the numbers in \nthe 10s place be the same is to create a square.',
       'And the 7 + 3 = 10 to move the result \nleft one place.'
     
+    ],
+
+    /*
+    - Add a new key-value pair for the new trick.
+    - Key: Corresponding array index in the homework_questions and tricksList array
+    - Value: An array with detailed steps as string entries
+    [
+      'Please take care of the number of characters in a single line.',
+      'If its too much, add a "\n" to it wherever necessary'
     ]
+    */
   }
 
   explanation_steps = all_explanation_steps[chosen_question_number];
