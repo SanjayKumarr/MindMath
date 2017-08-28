@@ -25,6 +25,7 @@ function getQuestion(get_new_question) {
     "\n multiply any number with 5!",
     "multiply \n a two digit number with 11",
     "multiply two digits \n when the sum of the one's digit is 10",
+    //"Include your trick in the questions array"
   ];
   
   if(is_user_selecting_question) {
