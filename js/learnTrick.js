@@ -152,7 +152,18 @@ function getSteps() {
       'Step 2: Find x * y',
       'Step 3: Multiply both numbers’ one digit',
       'Answer = Step 2 | Step 3'
+    ],
+
+    /*
+    - Add a new key-value pair for the new trick.
+    - Key: Corresponding array index in the homework_questions and tricksList array
+    - Value: An array with steps as string entries.
+    [
+      'Explain the trick step by step.',
+      'Keep the steps limited to characters to not exceed the space',
+      'Number of theory steps to be equal to the example steps'
     ]
+    */
   }
 
   var all_example_steps = {
@@ -216,7 +227,18 @@ function getSteps() {
       '4 * 5 = 20',
       '3 * 7 = 21',
       'Answer = 2021'
+    ],
+
+    /*
+    - Add a new key-value pair for the new trick.
+    - Key: Corresponding array index in the homework_questions and tricksList array
+    - Value: An array with steps as string entries.
+    [
+      'Explain the example step by step corresponding to your theory.',
+      'Keep the characters limited to not exceed the space',
+      'Number of theory steps to be equal to the example steps'
     ]
+    */
   }
 
 
