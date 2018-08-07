@@ -1,8 +1,6 @@
 # MindMath
 
 
-#### A Sugarlabs activity developed under Google Summer of Code '17 that helps you learn math tricks to do quick math in your mind.
-
 MindMath is an interactive approach by which users of age 9 and above can learn speedy math tricks (also called as Vedic math) and do the math as fast as a calculator. The user can play MindMath for about 15 - 20 minutes a day to learn and practice a new trick. After which the user can take up a challenge with a calculator and validate their learning and also improve their speed. They can also revisit any completed trick and play them at any point in time.
 
 To start with, we have 8 tricks added to the activity.
@@ -123,7 +121,6 @@ We have organized the code using phaser states. i.e., Each screen in the game re
 
 ## Contributors
 
-This activity has been developed under the SugarLabs organization in Google Summer of Code 2017.
 
 **Mentor: Tony Anderson**
 
